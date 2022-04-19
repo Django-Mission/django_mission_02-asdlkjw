@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>FAQ</title>
+ 
+</head>
+<script type="text/javascript" src="C:/Users/K1210736/Desktop/django/js/carousel.js"></script>
+<body>
+  <?$board_id=$_GET['board_id'];?>
+    <div id="board_write">
+        <h4>FAQ 공간입니다.</h4>
+            <div id="write_area">
+                <form enctype="multipart/form-data" action="write_ok.php?board_id=<?echo $board_id;?>" method="post">
+                    <div id= "user" class="txc-textbox" style="background-color:#eeeeee; border:#c1c1c1 1px solid; padding: 10px; height: 20px; width: 300px;">
+                        <th>{{user}}</th>
+                    </div>
+                    <div id="category">
+                        <select name="job">
+                            <option value="">카테고리</option>
+                            <option value="일반">일반</option>
+                            <option value="계정">계정</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="txc-textbox" style="background-color:#eeeeee; border:#c1c1c1 1px solid; padding: 10px; height: 20px; width: 300px;">
+                        <th>{{ title }}</th>
+                    </div>
+                    <div class="wi_line"></div>
+                    <div class="txc-textbox" style="background-color:#eeeeee; border:#c1c1c1 1px solid; padding: 10px; height: 60px; width: 300px;">
+                        <th>{{ content }}</th>
+                    </div>
+ 
+                    {% comment %} <input type="file" name="SelectFile" /> {% endcomment %}
+                    <div id="date">
+                        <th>작성일시 : {{date}}</th>
+                    </div>
+ 
+                    {% comment %} <div class="bt_se">
+                        <button type="submit">답글 작성</button>
+                    </div> {% endcomment %}
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
